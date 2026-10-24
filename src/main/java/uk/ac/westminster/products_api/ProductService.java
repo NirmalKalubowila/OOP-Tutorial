@@ -17,6 +17,11 @@ public class ProductService {
         return products;
     }
 
+    public ProductService(){
+        products.add(new DigitalProduct(nextId++, "Clean Code (E-book)", 29.99, "/downloads/clean-code.pdf", 4.2));
+        products.add(new PhysicalProduct(nextId++, "27-inch Monitor", 249.99, 5.4, "61cm x 41cm x 18cm"));
+    }
+
     public Product addProduct (Product product){
         product.setId(nextId++);
         products.add(product);
