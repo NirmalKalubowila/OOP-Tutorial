@@ -23,7 +23,7 @@ public class ProductController {
    }
 
    @PostMapping
-    public Product addProducts(@RequestBody Product product){
+    public Product addProducts(@RequestBody DigitalProduct product){
         return productService.addProduct(product);
    }
 
@@ -32,9 +32,14 @@ public class ProductController {
         productService.deleteProduct(id);
    }
 
-    @GetMapping("/products/search")
+    @GetMapping("/search")
     public List<Product> search(@RequestParam String name) {
         return productService.findByName(name);
+    }
+
+    @GetMapping("/summaries")
+    public List<String> getAllSummaries(){
+        return productService.getAllSummaries();
     }
 
 
